@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1751655628833,
+    "type": "expense",
+    "amount": 5000,
+    "category": "food",
+    "date": "2025-07-04",
+    "note": "food stuffs"
+  },
+  {
+    "id": 1752046362259,
+    "type": "income",
+    "amount": 100000,
+    "category": "government support",
+    "date": "2025-07-09",
+    "note": ""
+  },
+  {
+    "id": 1752046419801,
+    "type": "expense",
+    "amount": 75000,
+    "category": "food stuffs",
+    "date": "2025-07-09",
+    "note": ""
+  },
+  {
+    "id": 1752051859006,
+    "type": "expense",
+    "amount": 2000,
+    "category": "washin materials",
+    "date": "2025-07-09",
+    "note": "january allowance for nyscs"
+  },
+  {
+    "id": 1752069114136,
+    "type": "income",
+    "amount": 1000000000,
+    "category": "Arrears",
+    "date": "2025-07-09",
+    "note": "NYSC backlogs arrears"
+  },
+  {
+    "id": 1752069114279,
+    "type": "income",
+    "amount": 1000000000,
+    "category": "Arrears",
+    "date": "2025-07-09",
+    "note": "NYSC backlogs arrear"
+  },
+  {
+    "id": 1752090560900,
+    "type": "income",
+    "amount": 20000,
+    "category": "Utensils",
+    "date": "2025-07-09",
+    "note": "Bought kitchen utensils for nysc"
+  }
+]
