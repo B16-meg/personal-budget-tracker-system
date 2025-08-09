@@ -88,7 +88,7 @@ pip --version
 Installation
 Clone the repository:
 
-git clone https://github.com/your-username/personal-budget-tracker.git
+git clone https://github.com/B16-meg/personal-budget-tracker-system.git
 cd personal-budget-tracker
 
 Install the required Python package:
