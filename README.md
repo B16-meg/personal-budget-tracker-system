@@ -89,7 +89,7 @@ Installation
 Clone the repository:
 
 git clone https://github.com/B16-meg/personal-budget-tracker-system.git
-cd personal-budget-tracker
+cd personal-budget-tracker-system
 
 Install the required Python package:
 
