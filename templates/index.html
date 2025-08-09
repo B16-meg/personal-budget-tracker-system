@@ -1,0 +1,85 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Personal Budget Tracker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Personal Budget Tracker</h1>
+
+    <div class="summary">
+      <p><strong>Total Income:</strong> ₦<span id="total-income">0</span></p>
+      <p><strong>Total Expenses:</strong> ₦<span id="total-expense">0</span></p>
+      <p><strong>Balance:</strong> ₦<span id="balance">0</span></p>
+    </div>
+
+    <form id="transaction-form">
+      <select id="type" required>
+        <option value="" disabled selected>Type</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="number" id="amount" placeholder="Amount (₦)" required />
+      <input type="text" id="category" placeholder="Category (e.g. Food)" required />
+      <input type="date" id="date" required />
+      <input type="text" id="note" placeholder="Note (optional)" />
+      <button type="submit">Add Transaction</button>
+    </form>
+
+    <!-- Search -->
+    <input type="text" id="search-input" placeholder="Search by category, type, or note..." />
+
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Note</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Spending by Category</h2>
+    <canvas id="categoryChart" width="400" height="200"></canvas>
+
+    <div class="export-buttons">
+      <label for="format">Export Format:</label>
+      <select id="format">
+        <option value="png">PNG</option>
+        <option value="jpeg">JPG</option>
+      </select>
+      <button onclick="downloadChart()" class="download-btn">Download Chart</button>
+      <button onclick="downloadChartAsPDF()" class="download-btn">Download Chart as PDF</button>
+      <button onclick="downloadFullPage()" class="download-btn">Download Full Page</button>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="edit-modal" style="display:none; position:fixed; top:10%; left:50%; transform:translateX(-50%); background:#fff; border:1px solid #ccc; padding:20px; z-index:1000;">
+    <h3>Edit Transaction</h3>
+    <form id="edit-form">
+      <select name="type" required>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <input type="number" name="amount" placeholder="Amount (₦)" required />
+      <input type="text" name="category" placeholder="Category" required />
+      <input type="date" name="date" required />
+      <input type="text" name="note" placeholder="Note (optional)" />
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
